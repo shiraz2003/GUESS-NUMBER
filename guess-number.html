@@ -3,64 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css"></head>
+    <title>Guess the Number Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
     <h1>Guess the Number Game</h1>
-    <div  class='container'>
+    <div class="container">
         <h2>Guess a number between 1 and 100</h2>
         <input type="number" id="guess" placeholder="Enter your guess">
-        <button id="submit" onclick="" >Submit</button>
+        <button id="submit">Submit</button>
         <p class="feedback" id="feedback"></p>
-         <p id="attempts"></p>
-
-
-
+        <p id="attempts"></p>
     </div>
-    <script>
-    let secretNumber=99;
-    let attempts=0;
-    let submitButton = document.getElementById("submit");
-    const a=()=>{
-        console.log("Button clicked!");
-        const userGuess = document.getElementById("guess").value;
-        const feedback = document.getElementById("feedback");
-        const attemptsDisplay = document.getElementById("attempts");
-        console.log(userGuess);
-        if(userGuess===""){
-            feedback.testContent="Please enter a number!";
-            feedback.style.color="red";
-        }
-        
-
-
-    const guess=parseInt(userGuess);
-    const restartAnimation = (element, className) => {
-        element.classList.remove(className); // Remove the class
-        void element.offsetWidth; // Trigger reflow to reset the animation
-        element.classList.add(className); // Re-add the class
-    };
-
-    if(guess===secretNumber){
-        attempts++;
-        attemptsDisplay.textContent=`You have made ${attempts} attempts`;
-        feedback.textContent="Congratulations! You guessed the number!";
-        feedback.style.color="green";
-        restartAnimation(feedback, "correct"); // Restart the 'correct' animation
-
-    }else{
-        attempts++;
-        attemptsDisplay.textContent=`You have made ${attempts} attempts`;
-        feedback.textContent=`Wrong guess! Try again!`;
-        feedback.style.color="red";
-        restartAnimation(feedback, "wrong"); // Restart the 'wrong' animation
-
-
-    }
-}
-
-    submitButton.addEventListener('click',a);
-        
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
